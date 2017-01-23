@@ -1,0 +1,79 @@
+[2016-11-14 21:42:01] requirements_debian_libs_install
+requirements_debian_libs_install () 
+{ 
+    __rvm_try_sudo apt-get --no-install-recommends --yes install "$@" || return $?
+}
+current path: /home/vagrant
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/vagrant/.rvm/bin
+command(4): requirements_debian_libs_install libgmp-dev libgdbm-dev libffi-dev
+++ __rvm_try_sudo apt-get --no-install-recommends --yes install libgmp-dev libgdbm-dev libffi-dev
+++ typeset -a command_to_run
+++ typeset sudo_path sbin_path missing_paths
+++ command_to_run=("$@")
+++ ((  UID == 0  ))
+++ case "$rvm_autolibs_flag_number" in
+++ is_a_function __rvm_sudo
+++ typeset -f __rvm_sudo
+++ missing_paths=
+++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ [[ -d /sbin ]]
+++ [[ :/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/vagrant/.rvm/bin: != *\:\/\s\b\i\n\:* ]]
+++ missing_paths+=:/sbin
+++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ [[ -d /usr/sbin ]]
+++ [[ :/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/vagrant/.rvm/bin: != *\:\/\u\s\r\/\s\b\i\n\:* ]]
+++ missing_paths+=:/usr/sbin
+++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ [[ -d /usr/local/sbin ]]
+++ [[ :/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/vagrant/.rvm/bin: != *\:\/\u\s\r\/\l\o\c\a\l\/\s\b\i\n\:* ]]
+++ missing_paths+=:/usr/local/sbin
+++ [[ -n :/sbin:/usr/sbin:/usr/local/sbin ]]
+++ command_to_run=(/usr/bin/env PATH="${PATH}${missing_paths}" "${command_to_run[@]}")
+++ command_to_run=(__rvm_sudo -p "%p password required for '$*': " "${command_to_run[@]}")
+++ __rvm_sudo -p '%p password required for '\''apt-get --no-install-recommends --yes install libgmp-dev libgdbm-dev libffi-dev'\'': ' /usr/bin/env PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/vagrant/.rvm/bin:/sbin:/usr/sbin:/usr/local/sbin apt-get --no-install-recommends --yes install libgmp-dev libgdbm-dev libffi-dev
+++ command sudo -p '%p password required for '\''apt-get --no-install-recommends --yes install libgmp-dev libgdbm-dev libffi-dev'\'': ' /usr/bin/env PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/vagrant/.rvm/bin:/sbin:/usr/sbin:/usr/local/sbin apt-get --no-install-recommends --yes install libgmp-dev libgdbm-dev libffi-dev
+++ sudo -p '%p password required for '\''apt-get --no-install-recommends --yes install libgmp-dev libgdbm-dev libffi-dev'\'': ' /usr/bin/env PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/vagrant/.rvm/bin:/sbin:/usr/sbin:/usr/local/sbin apt-get --no-install-recommends --yes install libgmp-dev libgdbm-dev libffi-dev
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libgmpxx4ldbl
+Suggested packages:
+  gmp-doc libgmp10-doc libmpfr-dev
+The following NEW packages will be installed:
+  libffi-dev libgdbm-dev libgmp-dev libgmpxx4ldbl
+0 upgraded, 4 newly installed, 0 to remove and 66 not upgraded.
+Need to get 520 kB of archives.
+After this operation, 2220 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libgdbm-dev amd64 1.8.3-13.1 [35.9 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libgmpxx4ldbl amd64 2:6.1.0+dfsg-2 [8948 B]
+Get:3 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libgmp-dev amd64 2:6.1.0+dfsg-2 [314 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libffi-dev amd64 3.2.1-4 [161 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 520 kB in 0s (719 kB/s)
+Selecting previously unselected package libgdbm-dev.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 75020 files and directories currently installed.)
+Preparing to unpack .../libgdbm-dev_1.8.3-13.1_amd64.deb ...
+Unpacking libgdbm-dev (1.8.3-13.1) ...
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+Preparing to unpack .../libgmpxx4ldbl_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../libgmp-dev_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libffi-dev:amd64.
+Preparing to unpack .../libffi-dev_3.2.1-4_amd64.deb ...
+Unpacking libffi-dev:amd64 (3.2.1-4) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu3) ...
+Setting up libgdbm-dev (1.8.3-13.1) ...
+Setting up libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libffi-dev:amd64 (3.2.1-4) ...
+Processing triggers for libc-bin (2.23-0ubuntu3) ...
